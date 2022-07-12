@@ -1,6 +1,6 @@
 ### panel/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/panel/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/panel/demo/animation.svg)
 
 <details>
 
@@ -9,7 +9,7 @@
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Declare panels in a two dimensional grid system.

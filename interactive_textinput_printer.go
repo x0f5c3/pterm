@@ -8,7 +8,7 @@ import (
 	"atomicgo.dev/keyboard"
 	"atomicgo.dev/keyboard/keys"
 
-	"github.com/pterm/pterm/internal"
+	"github.com/x0f5c3/pterm/internal"
 )
 
 var (

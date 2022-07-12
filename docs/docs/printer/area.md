@@ -1,8 +1,8 @@
 # AreaPrinter
 
-![AreaPrinter Example](https://raw.githubusercontent.com/pterm/pterm/master/_examples/area/animation.svg)
+![AreaPrinter Example](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/area/animation.svg)
 
-<p align="center"><a href="https://github.com/pterm/pterm/blob/master/_examples/area/main.go" target="_blank">(Show source of demo)</a></p>
+<p align="center"><a href="https://github.com/x0f5c3/pterm/blob/master/_examples/area/main.go" target="_blank">(Show source of demo)</a></p>
 
 
 ## Usage
@@ -23,9 +23,9 @@ area.Stop()
 
 |Function|Description|
 |--------|-----------|
-|[Update](https://pkg.go.dev/github.com/pterm/pterm#AreaPrinter.Update)|Update overwrites the content of the AreaPrinter.|
-|[GetContent](https://pkg.go.dev/github.com/pterm/pterm#AreaPrinter.GetContent)|GetContent returns the current area content.|
-|[Clear](https://pkg.go.dev/github.com/pterm/pterm#AreaPrinter.Clear)|Clear function clears the content of the area.|
+|[Update](https://pkg.go.dev/github.com/x0f5c3/pterm#AreaPrinter.Update)|Update overwrites the content of the AreaPrinter.|
+|[GetContent](https://pkg.go.dev/github.com/x0f5c3/pterm#AreaPrinter.GetContent)|GetContent returns the current area content.|
+|[Clear](https://pkg.go.dev/github.com/x0f5c3/pterm#AreaPrinter.Clear)|Clear function clears the content of the area.|
 
 ### Options
 
@@ -40,12 +40,12 @@ area.Stop()
 
 |Option|Type|
 |------|----|
-|[RemoveWhenDone](https://pkg.go.dev/github.com/pterm/pterm#AreaPrinter.RemoveWhenDone)|bool|
-|[Fullscreen](https://pkg.go.dev/github.com/pterm/pterm#AreaPrinter.Fullscreen)|bool|
-|[Center](https://pkg.go.dev/github.com/pterm/pterm#AreaPrinter.Center)|bool|
+|[RemoveWhenDone](https://pkg.go.dev/github.com/x0f5c3/pterm#AreaPrinter.RemoveWhenDone)|bool|
+|[Fullscreen](https://pkg.go.dev/github.com/x0f5c3/pterm#AreaPrinter.Fullscreen)|bool|
+|[Center](https://pkg.go.dev/github.com/x0f5c3/pterm#AreaPrinter.Center)|bool|
 
 ### Output functions
-> This printer implements the interface [`LivePrinter`](https://github.com/pterm/pterm/blob/master/interface_live_printer.go)
+> This printer implements the interface [`LivePrinter`](https://github.com/x0f5c3/pterm/blob/master/interface_live_printer.go)
 
 |Function|Description|
 |------|---------|

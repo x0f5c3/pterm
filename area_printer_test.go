@@ -5,7 +5,8 @@ import (
 	"testing"
 
 	"github.com/MarvinJWendt/testza"
-	"github.com/pterm/pterm"
+
+	"github.com/x0f5c3/pterm"
 )
 
 func TestAreaPrinter_NilPrint(t *testing.T) {

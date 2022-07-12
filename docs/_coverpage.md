@@ -9,4 +9,4 @@
 
 [Quick Start](quick-start.md)
 [Documentation](docs/intro.md)
-[GitHub](https://github.com/pterm/pterm/)
+[GitHub](https://github.com/x0f5c3/pterm/)

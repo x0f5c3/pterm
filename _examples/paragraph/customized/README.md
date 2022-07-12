@@ -5,7 +5,7 @@
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Print a paragraph with a custom maximal width.

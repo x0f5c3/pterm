@@ -1,6 +1,6 @@
 ### area/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/area/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/area/demo/animation.svg)
 
 <details>
 
@@ -12,7 +12,7 @@ package main
 import (
 	"time"
 
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {

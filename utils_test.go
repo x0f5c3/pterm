@@ -8,7 +8,8 @@ import (
 	"testing"
 
 	"github.com/MarvinJWendt/testza"
-	"github.com/pterm/pterm"
+
+	"github.com/x0f5c3/pterm"
 )
 
 var printables = []interface{}{"Hello, World!", 1337, true, false, -1337, 'c', 1.5, "\\", "%s"}

@@ -1,6 +1,6 @@
 ### coloring/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/demo/animation.svg)
 
 <details>
 
@@ -9,7 +9,7 @@
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Print all colors
@@ -44,7 +44,7 @@ func main() {
 
 ### coloring/disable-output
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/disable-output/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/disable-output/animation.svg)
 
 <details>
 
@@ -53,7 +53,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	for i := 0; i < 15; i++ {
@@ -76,7 +76,7 @@ func main() {
 
 ### coloring/fade-colors
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/fade-colors/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/fade-colors/animation.svg)
 
 <details>
 
@@ -86,7 +86,7 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -109,7 +109,7 @@ func main() {
 
 ### coloring/fade-multiple-colors
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/fade-multiple-colors/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/fade-multiple-colors/animation.svg)
 
 <details>
 
@@ -121,7 +121,7 @@ package main
 import (
 	"strings"
 
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -156,7 +156,7 @@ func main() {
 
 ### coloring/override-default-printers
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/override-default-printers/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/override-default-printers/animation.svg)
 
 <details>
 
@@ -165,7 +165,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Print default error.
@@ -187,7 +187,7 @@ func main() {
 
 ### coloring/print-color-rgb
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/print-color-rgb/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/print-color-rgb/animation.svg)
 
 <details>
 
@@ -196,7 +196,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Print strings with a custom RGB color.

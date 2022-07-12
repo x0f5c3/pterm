@@ -1,9 +1,9 @@
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
-	// All available options: https://pkg.go.dev/github.com/pterm/pterm#HeaderPrinter
+	// All available options: https://pkg.go.dev/github.com/x0f5c3/pterm#HeaderPrinter
 
 	// Build on top of DefaultHeader
 	pterm.DefaultHeader. // Use DefaultHeader as base

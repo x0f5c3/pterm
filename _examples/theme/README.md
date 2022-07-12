@@ -1,6 +1,6 @@
 ### theme/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/theme/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/theme/demo/animation.svg)
 
 <details>
 
@@ -10,7 +10,7 @@
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 	"reflect"
 	"time"
 )

@@ -4,7 +4,8 @@ import (
 	"testing"
 
 	"github.com/MarvinJWendt/testza"
-	"github.com/pterm/pterm/internal"
+
+	"github.com/x0f5c3/pterm/internal"
 )
 
 func TestMapRangeToRange(t *testing.T) {

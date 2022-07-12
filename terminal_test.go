@@ -5,8 +5,9 @@ import (
 	"testing"
 
 	"github.com/MarvinJWendt/testza"
-	"github.com/pterm/pterm"
 	"golang.org/x/term"
+
+	"github.com/x0f5c3/pterm"
 )
 
 func TestSetForcedTerminalSize(t *testing.T) {

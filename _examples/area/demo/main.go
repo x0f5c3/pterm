@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {

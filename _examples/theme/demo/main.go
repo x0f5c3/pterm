@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/pterm/pterm"
 	"reflect"
 	"time"
+
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {

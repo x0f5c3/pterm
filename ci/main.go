@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 type Examples struct {
@@ -183,7 +183,7 @@ func main() {
 							}
 
 							sectionExamples += "### " + section.Name() + "/" + example.Name() + "\n\n"
-							sectionExamples += "![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/" + section.Name() + "/" + example.Name() + "/animation.svg)\n\n"
+							sectionExamples += "![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/" + section.Name() + "/" + example.Name() + "/animation.svg)\n\n"
 							sectionExamples += "<details>\n\n<summary>SHOW SOURCE</summary>\n\n"
 							sectionExamples += "```go\n"
 							sectionExamples += string(exampleCode) + "\n"

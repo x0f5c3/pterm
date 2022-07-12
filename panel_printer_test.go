@@ -6,7 +6,8 @@ import (
 	"testing"
 
 	"github.com/MarvinJWendt/testza"
-	"github.com/pterm/pterm"
+
+	"github.com/x0f5c3/pterm"
 )
 
 func TestPanelPrinterNilPrint(t *testing.T) {

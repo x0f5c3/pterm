@@ -1,6 +1,6 @@
 ### interactive_select/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_select/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_select/demo/animation.svg)
 
 <details>
 
@@ -12,7 +12,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {

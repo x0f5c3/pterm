@@ -1,6 +1,6 @@
 ### demo/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/demo/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/demo/demo/animation.svg)
 
 <details>
 
@@ -17,8 +17,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pterm/pterm"
-	"github.com/pterm/pterm/putils"
+	"github.com/x0f5c3/pterm"
+	"github.com/x0f5c3/pterm/putils"
 )
 
 // Speed the demo up, by setting this flag.

@@ -7,7 +7,7 @@ import (
 
 	"github.com/mattn/go-runewidth"
 
-	"github.com/pterm/pterm/internal"
+	"github.com/x0f5c3/pterm/internal"
 )
 
 // BoxPrinter is able to render a box around printables.

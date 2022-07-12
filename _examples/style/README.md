@@ -1,6 +1,6 @@
 ### style/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/style/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/style/demo/animation.svg)
 
 <details>
 
@@ -9,7 +9,7 @@
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Create styles as new variables

@@ -1,6 +1,6 @@
 ### interactive_textinput/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_textinput/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_textinput/demo/animation.svg)
 
 <details>
 
@@ -10,7 +10,7 @@
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -25,7 +25,7 @@ func main() {
 
 ### interactive_textinput/multi-line
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_textinput/multi-line/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_textinput/multi-line/animation.svg)
 
 <details>
 
@@ -35,7 +35,7 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {

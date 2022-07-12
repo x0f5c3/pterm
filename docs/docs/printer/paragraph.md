@@ -5,9 +5,9 @@ Replace all of the following strings with the current printer.
      paragraph Paragraph ParagraphPrinter DefaultParagraph
 -->
 
-![ParagraphPrinter Example](https://raw.githubusercontent.com/pterm/pterm/master/_examples/paragraph/animation.svg)
+![ParagraphPrinter Example](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/paragraph/animation.svg)
 
-<p align="center"><a href="https://github.com/pterm/pterm/blob/master/_examples/paragraph/main.go" target="_blank">(Show source of demo)</a></p>
+<p align="center"><a href="https://github.com/x0f5c3/pterm/blob/master/_examples/paragraph/main.go" target="_blank">(Show source of demo)</a></p>
 
 ## Usage
 
@@ -30,12 +30,12 @@ pterm.DefaultParagraph.Println("Hello, World!")
 
 | Option                                                                              | Type      |
 | ----------------------------------------------------------------------------------- | --------- |
-| [MaxWidth](https://pkg.go.dev/github.com/pterm/pterm#ParagraphPrinter.WithMaxWidth) | int       |
-| [Writer](https://pkg.go.dev/github.com/pterm/pterm#ParagraphPrinter.WithWriter)     | io.Writer |
+| [MaxWidth](https://pkg.go.dev/github.com/x0f5c3/pterm#ParagraphPrinter.WithMaxWidth) | int       |
+| [Writer](https://pkg.go.dev/github.com/x0f5c3/pterm#ParagraphPrinter.WithWriter)     | io.Writer |
 
 ### Output functions
 
-> This printer implements the interface [`TextPrinter`](https://github.com/pterm/pterm/blob/master/interface_text_printer.go)
+> This printer implements the interface [`TextPrinter`](https://github.com/x0f5c3/pterm/blob/master/interface_text_printer.go)
 
 | Function                                   | Description                                                                                  |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------- |

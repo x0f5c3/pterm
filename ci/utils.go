@@ -9,7 +9,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func do(title string, currentLevel int, f func(currentLevel int)) {

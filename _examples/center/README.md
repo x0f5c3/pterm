@@ -1,6 +1,6 @@
 ### center/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/center/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/center/demo/animation.svg)
 
 <details>
 
@@ -9,7 +9,7 @@
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	pterm.DefaultCenter.Println("This text is centered!\nIt centeres the whole block by default.\nIn that way you can do stuff like this:")

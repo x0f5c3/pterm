@@ -5,7 +5,7 @@
 <!-- examples:start -->
 ### area/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/area/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/area/demo/animation.svg)
 
 <details>
 
@@ -17,7 +17,7 @@ package main
 import (
 	"time"
 
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 
 ### barchart/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/barchart/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/barchart/demo/animation.svg)
 
 <details>
 
@@ -49,7 +49,7 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -79,7 +79,7 @@ func main() {
 
 ### barchart/mixed-values
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/barchart/mixed-values/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/barchart/mixed-values/animation.svg)
 
 <details>
 
@@ -89,7 +89,7 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -127,7 +127,7 @@ func main() {
 
 ### barchart/negative-values
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/barchart/negative-values/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/barchart/negative-values/animation.svg)
 
 <details>
 
@@ -137,7 +137,7 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -167,7 +167,7 @@ func main() {
 
 ### basictext/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/basictext/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/basictext/demo/animation.svg)
 
 <details>
 
@@ -176,7 +176,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// A BasicText printer is used to print text, without special formatting.
@@ -194,7 +194,7 @@ func main() {
 
 ### bigtext/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/bigtext/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/bigtext/demo/animation.svg)
 
 <details>
 
@@ -204,8 +204,8 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
-	"github.com/pterm/pterm/putils"
+	"github.com/x0f5c3/pterm"
+	"github.com/x0f5c3/pterm/putils"
 )
 
 func main() {
@@ -231,7 +231,7 @@ func main() {
 
 ### box/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/box/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/box/demo/animation.svg)
 
 <details>
 
@@ -240,7 +240,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	pterm.Info.Println("This might not be rendered correctly on GitHub,\nbut it will work in a real terminal.\nThis is because GitHub does not use a monospaced font by default for SVGs")
@@ -263,7 +263,7 @@ func main() {
 
 ### bulletlist/customized
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/bulletlist/customized/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/bulletlist/customized/animation.svg)
 
 <details>
 
@@ -273,7 +273,7 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -291,7 +291,7 @@ func main() {
 
 ### bulletlist/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/bulletlist/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/bulletlist/demo/animation.svg)
 
 <details>
 
@@ -301,8 +301,8 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
-	"github.com/pterm/pterm/putils"
+	"github.com/x0f5c3/pterm"
+	"github.com/x0f5c3/pterm/putils"
 )
 
 func main() {
@@ -327,7 +327,7 @@ func main() {
 
 ### center/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/center/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/center/demo/animation.svg)
 
 <details>
 
@@ -336,7 +336,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	pterm.DefaultCenter.Println("This text is centered!\nIt centeres the whole block by default.\nIn that way you can do stuff like this:")
@@ -354,7 +354,7 @@ func main() {
 
 ### coloring/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/demo/animation.svg)
 
 <details>
 
@@ -363,7 +363,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Print all colors
@@ -398,7 +398,7 @@ func main() {
 
 ### coloring/disable-output
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/disable-output/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/disable-output/animation.svg)
 
 <details>
 
@@ -407,7 +407,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	for i := 0; i < 15; i++ {
@@ -430,7 +430,7 @@ func main() {
 
 ### coloring/fade-colors
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/fade-colors/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/fade-colors/animation.svg)
 
 <details>
 
@@ -440,7 +440,7 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -463,7 +463,7 @@ func main() {
 
 ### coloring/fade-multiple-colors
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/fade-multiple-colors/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/fade-multiple-colors/animation.svg)
 
 <details>
 
@@ -475,7 +475,7 @@ package main
 import (
 	"strings"
 
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -510,7 +510,7 @@ func main() {
 
 ### coloring/override-default-printers
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/override-default-printers/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/override-default-printers/animation.svg)
 
 <details>
 
@@ -519,7 +519,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Print default error.
@@ -541,7 +541,7 @@ func main() {
 
 ### coloring/print-color-rgb
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/print-color-rgb/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/print-color-rgb/animation.svg)
 
 <details>
 
@@ -550,7 +550,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Print strings with a custom RGB color.
@@ -566,7 +566,7 @@ func main() {
 
 ### demo/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/demo/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/demo/demo/animation.svg)
 
 <details>
 
@@ -583,8 +583,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pterm/pterm"
-	"github.com/pterm/pterm/putils"
+	"github.com/x0f5c3/pterm"
+	"github.com/x0f5c3/pterm/putils"
 )
 
 // Speed the demo up, by setting this flag.
@@ -844,7 +844,7 @@ func randomInt(min, max int) int {
 
 ### header/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/header/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/header/demo/animation.svg)
 
 <details>
 
@@ -853,7 +853,7 @@ func randomInt(min, max int) int {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Print a default header.
@@ -868,7 +868,7 @@ func main() {
 
 ### header-custom/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/header-custom/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/header-custom/demo/animation.svg)
 
 <details>
 
@@ -877,10 +877,10 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
-	// All available options: https://pkg.go.dev/github.com/pterm/pterm#HeaderPrinter
+	// All available options: https://pkg.go.dev/github.com/x0f5c3/pterm#HeaderPrinter
 
 	// Build on top of DefaultHeader
 	pterm.DefaultHeader. // Use DefaultHeader as base
@@ -908,7 +908,7 @@ func main() {
 
 ### interactive_confirm/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_confirm/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_confirm/demo/animation.svg)
 
 <details>
 
@@ -918,7 +918,7 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -940,7 +940,7 @@ func boolToText(b bool) string {
 
 ### interactive_multiselect/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_multiselect/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_multiselect/demo/animation.svg)
 
 <details>
 
@@ -952,7 +952,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -976,7 +976,7 @@ func main() {
 
 ### interactive_select/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_select/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_select/demo/animation.svg)
 
 <details>
 
@@ -988,7 +988,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -1012,7 +1012,7 @@ func main() {
 
 ### interactive_textinput/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_textinput/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_textinput/demo/animation.svg)
 
 <details>
 
@@ -1022,7 +1022,7 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -1037,7 +1037,7 @@ func main() {
 
 ### interactive_textinput/multi-line
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_textinput/multi-line/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_textinput/multi-line/animation.svg)
 
 <details>
 
@@ -1047,7 +1047,7 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -1062,7 +1062,7 @@ func main() {
 
 ### panel/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/panel/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/panel/demo/animation.svg)
 
 <details>
 
@@ -1071,7 +1071,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Declare panels in a two dimensional grid system.
@@ -1090,7 +1090,7 @@ func main() {
 
 ### paragraph/customized
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/paragraph/customized/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/paragraph/customized/animation.svg)
 
 <details>
 
@@ -1099,7 +1099,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Print a paragraph with a custom maximal width.
@@ -1121,7 +1121,7 @@ func main() {
 
 ### paragraph/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/paragraph/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/paragraph/demo/animation.svg)
 
 <details>
 
@@ -1130,7 +1130,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Print long text with default paragraph printer.
@@ -1152,7 +1152,7 @@ func main() {
 
 ### prefix/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/prefix/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/prefix/demo/animation.svg)
 
 <details>
 
@@ -1161,7 +1161,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Enable debug messages.
@@ -1183,7 +1183,7 @@ func main() {
 
 ### progressbar/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/progressbar/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/progressbar/demo/animation.svg)
 
 <details>
 
@@ -1196,7 +1196,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 // Slice of strings with placeholder text.
@@ -1221,7 +1221,7 @@ func main() {
 
 ### section/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/section/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/section/demo/animation.svg)
 
 <details>
 
@@ -1230,7 +1230,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Print a section with level one.
@@ -1250,7 +1250,7 @@ func main() {
 
 ### spinner/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/spinner/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/spinner/demo/animation.svg)
 
 <details>
 
@@ -1262,7 +1262,7 @@ package main
 import (
 	"time"
 
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 )
 
 func main() {
@@ -1297,7 +1297,7 @@ func main() {
 
 ### style/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/style/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/style/demo/animation.svg)
 
 <details>
 
@@ -1306,7 +1306,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Create styles as new variables
@@ -1324,7 +1324,7 @@ func main() {
 
 ### table/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/table/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/table/demo/animation.svg)
 
 <details>
 
@@ -1333,7 +1333,7 @@ func main() {
 ```go
 package main
 
-import "github.com/pterm/pterm"
+import "github.com/x0f5c3/pterm"
 
 func main() {
 	// Create a fork of the default table, fill it with data and print it.
@@ -1362,7 +1362,7 @@ func main() {
 
 ### theme/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/theme/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/theme/demo/animation.svg)
 
 <details>
 
@@ -1372,7 +1372,7 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
+	"github.com/x0f5c3/pterm"
 	"reflect"
 	"time"
 )
@@ -1406,7 +1406,7 @@ func main() {
 
 ### tree/demo
 
-![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/tree/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/tree/demo/animation.svg)
 
 <details>
 
@@ -1416,8 +1416,8 @@ func main() {
 package main
 
 import (
-	"github.com/pterm/pterm"
-	"github.com/pterm/pterm/putils"
+	"github.com/x0f5c3/pterm"
+	"github.com/x0f5c3/pterm/putils"
 )
 
 func main() {

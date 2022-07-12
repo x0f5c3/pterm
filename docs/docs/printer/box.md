@@ -5,9 +5,9 @@ Replace all of the following strings with the current printer.
      box Box BoxPrinter DefaultBox
 -->
 
-![BoxPrinter Example](https://raw.githubusercontent.com/pterm/pterm/master/_examples/box/animation.svg)
+![BoxPrinter Example](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/box/animation.svg)
 
-<p align="center"><a href="https://github.com/pterm/pterm/blob/master/_examples/box/main.go" target="_blank">(Show source of demo)</a></p>
+<p align="center"><a href="https://github.com/x0f5c3/pterm/blob/master/_examples/box/main.go" target="_blank">(Show source of demo)</a></p>
 
 ## Usage
 
@@ -30,31 +30,31 @@ pterm.DefaultBox.Println("test")
 
 | Option                                                                                                      | Type                                                       |
 | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| [BottomLeftCornerString](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithBottomLeftCornerString)   | string                                                     |
-| [BottomPadding](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithBottomPadding)                     | int                                                        |
-| [BottomRightCornerString](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithBottomRightCornerString) | string                                                     |
-| [BoxStyle](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithBoxStyle)                               | [\*Style](https://pkg.go.dev/github.com/pterm/pterm#Style) |
-| [HorizontalString](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithHorizontalString)               | string                                                     |
-| [LeftPadding](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithLeftPadding)                         | int                                                        |
-| [RightPadding](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithRightPadding)                       | int                                                        |
-| [Text](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithText)                                       | string                                                     |
-| [TextStyle](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithTextStyle)                             | [\*Style](https://pkg.go.dev/github.com/pterm/pterm#Style) |
-| [Title](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithTitle)                                     | string                                                     |
-| [TitleBottomCenter](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithTitleBottomCenter)             | boolean                                                    |
-| [TitleBottomLeft](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithTitleBottomLeft)                 | boolean                                                    |
-| [TitleBottomRight](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithTitleBottomRight)               | boolean                                                    |
-| [TitleTopCenter](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithTitleTopCenter)                   | boolean                                                    |
-| [TitleTopLeft](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithTitleTopLeft)                       | boolean                                                    |
-| [TitleTopRight](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithTitleTopRight)                     | boolean                                                    |
-| [TopLeftCornerString](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithTopLeftCornerString)         | string                                                     |
-| [TopPadding](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithTopPadding)                           | int                                                        |
-| [TopRightCornerString](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithTopRightCornerString)       | string                                                     |
-| [VerticalString](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithVerticalString)                   | string                                                     |
-| [Writer](https://pkg.go.dev/github.com/pterm/pterm#BoxPrinter.WithWriter)                                   | io.Writer                                                  |
+| [BottomLeftCornerString](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithBottomLeftCornerString)   | string                                                     |
+| [BottomPadding](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithBottomPadding)                     | int                                                        |
+| [BottomRightCornerString](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithBottomRightCornerString) | string                                                     |
+| [BoxStyle](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithBoxStyle)                               | [\*Style](https://pkg.go.dev/github.com/x0f5c3/pterm#Style) |
+| [HorizontalString](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithHorizontalString)               | string                                                     |
+| [LeftPadding](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithLeftPadding)                         | int                                                        |
+| [RightPadding](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithRightPadding)                       | int                                                        |
+| [Text](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithText)                                       | string                                                     |
+| [TextStyle](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithTextStyle)                             | [\*Style](https://pkg.go.dev/github.com/x0f5c3/pterm#Style) |
+| [Title](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithTitle)                                     | string                                                     |
+| [TitleBottomCenter](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithTitleBottomCenter)             | boolean                                                    |
+| [TitleBottomLeft](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithTitleBottomLeft)                 | boolean                                                    |
+| [TitleBottomRight](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithTitleBottomRight)               | boolean                                                    |
+| [TitleTopCenter](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithTitleTopCenter)                   | boolean                                                    |
+| [TitleTopLeft](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithTitleTopLeft)                       | boolean                                                    |
+| [TitleTopRight](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithTitleTopRight)                     | boolean                                                    |
+| [TopLeftCornerString](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithTopLeftCornerString)         | string                                                     |
+| [TopPadding](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithTopPadding)                           | int                                                        |
+| [TopRightCornerString](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithTopRightCornerString)       | string                                                     |
+| [VerticalString](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithVerticalString)                   | string                                                     |
+| [Writer](https://pkg.go.dev/github.com/x0f5c3/pterm#BoxPrinter.WithWriter)                                   | io.Writer                                                  |
 
 ### Output functions
 
-> This printer implements the interface [`TextPrinter`](https://github.com/pterm/pterm/blob/master/interface_text_printer.go)
+> This printer implements the interface [`TextPrinter`](https://github.com/x0f5c3/pterm/blob/master/interface_text_printer.go)
 
 | Function                                   | Description                                                                                  |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------- |

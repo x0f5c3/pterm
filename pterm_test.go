@@ -1,9 +1,11 @@
 package pterm_test
 
 import (
-	"github.com/MarvinJWendt/testza"
-	"github.com/pterm/pterm"
 	"testing"
+
+	"github.com/MarvinJWendt/testza"
+
+	"github.com/x0f5c3/pterm"
 )
 
 func TestDisableDebugMessages(t *testing.T) {
