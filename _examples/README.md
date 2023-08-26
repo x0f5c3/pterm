@@ -3,9 +3,9 @@
 > This directory contains examples of using the PTerm library.
 
 <!-- examples:start -->
-### area/demo
+### area/center
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/area/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/area/center/animation.svg)
 
 <details>
 
@@ -17,7 +17,71 @@ package main
 import (
 	"time"
 
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
+)
+
+func main() {
+	area, _ := pterm.DefaultArea.WithCenter().Start()
+
+	for i := 0; i < 5; i++ {
+		area.Update(pterm.Sprintf("Current count: %d\nAreas can update their content dynamically!", i))
+		time.Sleep(time.Second)
+	}
+
+	area.Stop()
+}
+
+```
+
+</details>
+
+### area/default
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/area/default/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"time"
+
+	"github.com/pterm/pterm"
+)
+
+func main() {
+	area, _ := pterm.DefaultArea.Start()
+
+	for i := 0; i < 5; i++ {
+		area.Update(pterm.Sprintf("Current count: %d\nAreas can update their content dynamically!", i))
+		time.Sleep(time.Second)
+	}
+
+	area.Stop()
+}
+
+```
+
+</details>
+
+### area/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/area/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"time"
+
+	"github.com/pterm/pterm"
 )
 
 func main() {
@@ -37,9 +101,9 @@ func main() {
 
 </details>
 
-### barchart/demo
+### area/dynamic-chart
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/barchart/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/area/dynamic-chart/animation.svg)
 
 <details>
 
@@ -49,7 +113,206 @@ func main() {
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
+	"time"
+
+	"github.com/pterm/pterm"
+)
+
+func main() {
+	area, _ := pterm.DefaultArea.WithFullscreen().WithCenter().Start()
+	defer area.Stop()
+
+	for i := 0; i < 10; i++ {
+		barchart := pterm.DefaultBarChart.WithBars(dynamicBars(i))
+		content, _ := barchart.Srender()
+		area.Update(content)
+		time.Sleep(500 * time.Millisecond)
+	}
+}
+
+func dynamicBars(i int) pterm.Bars {
+	return pterm.Bars{
+		{Label: "A", Value: 10},
+		{Label: "B", Value: 20 * i},
+		{Label: "C", Value: 30},
+		{Label: "D", Value: 40 + i},
+	}
+}
+
+```
+
+</details>
+
+### area/fullscreen
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/area/fullscreen/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"time"
+
+	"github.com/pterm/pterm"
+)
+
+func main() {
+	area, _ := pterm.DefaultArea.WithFullscreen().Start()
+
+	for i := 0; i < 5; i++ {
+		area.Update(pterm.Sprintf("Current count: %d\nAreas can update their content dynamically!", i))
+		time.Sleep(time.Second)
+	}
+
+	area.Stop()
+}
+
+```
+
+</details>
+
+### area/fullscreen-center
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/area/fullscreen-center/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"time"
+
+	"github.com/pterm/pterm"
+)
+
+func main() {
+	area, _ := pterm.DefaultArea.WithFullscreen().WithCenter().Start()
+
+	for i := 0; i < 5; i++ {
+		area.Update(pterm.Sprintf("Current count: %d\nAreas can update their content dynamically!", i))
+		time.Sleep(time.Second)
+	}
+
+	area.Stop()
+}
+
+```
+
+</details>
+
+### barchart/custom-height
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/barchart/custom-height/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	pterm.DefaultBarChart.WithBars([]pterm.Bar{
+		{Label: "A", Value: 10},
+		{Label: "B", Value: 20},
+		{Label: "C", Value: 30},
+		{Label: "D", Value: 40},
+		{Label: "E", Value: 50},
+		{Label: "F", Value: 40},
+		{Label: "G", Value: 30},
+		{Label: "H", Value: 20},
+		{Label: "I", Value: 10},
+	}).WithHeight(5).Render()
+}
+
+```
+
+</details>
+
+### barchart/custom-width
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/barchart/custom-width/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	pterm.DefaultBarChart.WithBars([]pterm.Bar{
+		{Label: "A", Value: 10},
+		{Label: "B", Value: 20},
+		{Label: "C", Value: 30},
+		{Label: "D", Value: 40},
+		{Label: "E", Value: 50},
+		{Label: "F", Value: 40},
+		{Label: "G", Value: 30},
+		{Label: "H", Value: 20},
+		{Label: "I", Value: 10},
+	}).WithHorizontal().WithWidth(5).Render()
+}
+
+```
+
+</details>
+
+### barchart/default
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/barchart/default/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	pterm.DefaultBarChart.WithBars([]pterm.Bar{
+		{Label: "A", Value: 10},
+		{Label: "B", Value: 20},
+		{Label: "C", Value: 30},
+		{Label: "D", Value: 40},
+		{Label: "E", Value: 50},
+		{Label: "F", Value: 40},
+		{Label: "G", Value: 30},
+		{Label: "H", Value: 20},
+		{Label: "I", Value: 10},
+	}).Render()
+}
+
+```
+
+</details>
+
+### barchart/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/barchart/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"github.com/pterm/pterm"
 )
 
 func main() {
@@ -77,9 +340,71 @@ func main() {
 
 </details>
 
+### barchart/horizontal
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/barchart/horizontal/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	pterm.DefaultBarChart.WithBars([]pterm.Bar{
+		{Label: "A", Value: 10},
+		{Label: "B", Value: 20},
+		{Label: "C", Value: 30},
+		{Label: "D", Value: 40},
+		{Label: "E", Value: 50},
+		{Label: "F", Value: 40},
+		{Label: "G", Value: 30},
+		{Label: "H", Value: 20},
+		{Label: "I", Value: 10},
+	}).WithHorizontal().Render()
+}
+
+```
+
+</details>
+
+### barchart/horizontal-show-value
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/barchart/horizontal-show-value/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	pterm.DefaultBarChart.WithBars([]pterm.Bar{
+		{Label: "A", Value: 10},
+		{Label: "B", Value: 20},
+		{Label: "C", Value: 30},
+		{Label: "D", Value: 40},
+		{Label: "E", Value: 50},
+		{Label: "F", Value: 40},
+		{Label: "G", Value: 30},
+		{Label: "H", Value: 20},
+		{Label: "I", Value: 10},
+	}).WithHorizontal().WithShowValue().Render()
+}
+
+```
+
+</details>
+
 ### barchart/mixed-values
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/barchart/mixed-values/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/barchart/mixed-values/animation.svg)
 
 <details>
 
@@ -89,7 +414,7 @@ func main() {
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
 )
 
 func main() {
@@ -127,7 +452,7 @@ func main() {
 
 ### barchart/negative-values
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/barchart/negative-values/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/barchart/negative-values/animation.svg)
 
 <details>
 
@@ -137,7 +462,7 @@ func main() {
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
 )
 
 func main() {
@@ -165,9 +490,9 @@ func main() {
 
 </details>
 
-### basictext/demo
+### barchart/show-value
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/basictext/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/barchart/show-value/animation.svg)
 
 <details>
 
@@ -176,7 +501,38 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
+
+func main() {
+	pterm.DefaultBarChart.WithBars([]pterm.Bar{
+		{Label: "A", Value: 10},
+		{Label: "B", Value: 20},
+		{Label: "C", Value: 30},
+		{Label: "D", Value: 40},
+		{Label: "E", Value: 50},
+		{Label: "F", Value: 40},
+		{Label: "G", Value: 30},
+		{Label: "H", Value: 20},
+		{Label: "I", Value: 10},
+	}).WithShowValue().Render()
+}
+
+```
+
+</details>
+
+### basictext/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/basictext/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
 
 func main() {
 	// A BasicText printer is used to print text, without special formatting.
@@ -192,9 +548,9 @@ func main() {
 
 </details>
 
-### bigtext/demo
+### bigtext/colored
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/bigtext/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/bigtext/colored/animation.svg)
 
 <details>
 
@@ -204,8 +560,59 @@ func main() {
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
-	"github.com/x0f5c3/pterm/putils"
+	"github.com/pterm/pterm"
+	"github.com/pterm/pterm/putils"
+)
+
+func main() {
+	pterm.DefaultBigText.WithLetters(
+		putils.LettersFromStringWithStyle("P", pterm.FgCyan.ToStyle()),
+		putils.LettersFromStringWithStyle("Term", pterm.FgLightMagenta.ToStyle())).
+		Render()
+}
+
+```
+
+</details>
+
+### bigtext/default
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/bigtext/default/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"github.com/pterm/pterm"
+	"github.com/pterm/pterm/putils"
+)
+
+func main() {
+	pterm.DefaultBigText.WithLetters(putils.LettersFromString("PTerm")).Render()
+}
+
+```
+
+</details>
+
+### bigtext/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/bigtext/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"github.com/pterm/pterm"
+	"github.com/pterm/pterm/putils"
 )
 
 func main() {
@@ -215,8 +622,8 @@ func main() {
 
 	// Print a large text with differently colored letters.
 	pterm.DefaultBigText.WithLetters(
-		putils.LettersFromStringWithStyle("P", pterm.NewStyle(pterm.FgCyan)),
-		putils.LettersFromStringWithStyle("Term", pterm.NewStyle(pterm.FgLightMagenta))).
+		putils.LettersFromStringWithStyle("P", pterm.FgCyan.ToStyle()),
+		putils.LettersFromStringWithStyle("Term", pterm.FgLightMagenta.ToStyle())).
 		Render()
 
 	// LettersFromStringWithRGB can be used to create a large text with a specific RGB color.
@@ -229,9 +636,9 @@ func main() {
 
 </details>
 
-### box/demo
+### box/custom-padding
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/box/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/box/custom-padding/animation.svg)
 
 <details>
 
@@ -240,7 +647,54 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
+
+func main() {
+	pterm.DefaultBox.
+		WithRightPadding(10).
+		WithLeftPadding(10).
+		WithTopPadding(2).
+		WithBottomPadding(2).
+		Println("Hello, World!")
+}
+
+```
+
+</details>
+
+### box/default
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/box/default/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	pterm.DefaultBox.Println("Hello, World!")
+}
+
+```
+
+</details>
+
+### box/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/box/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
 
 func main() {
 	pterm.Info.Println("This might not be rendered correctly on GitHub,\nbut it will work in a real terminal.\nThis is because GitHub does not use a monospaced font by default for SVGs")
@@ -261,9 +715,47 @@ func main() {
 
 </details>
 
+### box/title
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/box/title/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	// Default titled bpx
+	paddedBox := pterm.DefaultBox.WithLeftPadding(4).WithRightPadding(4).WithTopPadding(1).WithBottomPadding(1)
+
+	title := pterm.LightRed("I'm a box!")
+
+	box1 := paddedBox.WithTitle(title).Sprint("Hello, World!\n      1")
+	box2 := paddedBox.WithTitle(title).WithTitleTopCenter().Sprint("Hello, World!\n      2")
+	box3 := paddedBox.WithTitle(title).WithTitleTopRight().Sprint("Hello, World!\n      3")
+	box4 := paddedBox.WithTitle(title).WithTitleBottomRight().Sprint("Hello, World!\n      4")
+	box5 := paddedBox.WithTitle(title).WithTitleBottomCenter().Sprint("Hello, World!\n      5")
+	box6 := paddedBox.WithTitle(title).WithTitleBottomLeft().Sprint("Hello, World!\n      6")
+	box7 := paddedBox.WithTitle(title).WithTitleTopLeft().Sprint("Hello, World!\n      7")
+
+	pterm.DefaultPanel.WithPanels([][]pterm.Panel{
+		{{box1}, {box2}, {box3}},
+		{{box4}, {box5}, {box6}},
+		{{box7}},
+	}).Render()
+}
+
+```
+
+</details>
+
 ### bulletlist/customized
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/bulletlist/customized/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/bulletlist/customized/animation.svg)
 
 <details>
 
@@ -273,7 +765,7 @@ func main() {
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
 )
 
 func main() {
@@ -291,7 +783,7 @@ func main() {
 
 ### bulletlist/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/bulletlist/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/bulletlist/demo/animation.svg)
 
 <details>
 
@@ -301,8 +793,8 @@ func main() {
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
-	"github.com/x0f5c3/pterm/putils"
+	"github.com/pterm/pterm"
+	"github.com/pterm/pterm/putils"
 )
 
 func main() {
@@ -327,7 +819,7 @@ func main() {
 
 ### center/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/center/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/center/demo/animation.svg)
 
 <details>
 
@@ -336,7 +828,7 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
 
 func main() {
 	pterm.DefaultCenter.Println("This text is centered!\nIt centeres the whole block by default.\nIn that way you can do stuff like this:")
@@ -354,7 +846,7 @@ func main() {
 
 ### coloring/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/demo/animation.svg)
 
 <details>
 
@@ -363,7 +855,7 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
 
 func main() {
 	// Print all colors
@@ -398,7 +890,7 @@ func main() {
 
 ### coloring/disable-output
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/disable-output/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/disable-output/animation.svg)
 
 <details>
 
@@ -407,7 +899,7 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
 
 func main() {
 	for i := 0; i < 15; i++ {
@@ -430,7 +922,7 @@ func main() {
 
 ### coloring/fade-colors
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/fade-colors/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/fade-colors/animation.svg)
 
 <details>
 
@@ -440,7 +932,7 @@ func main() {
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
 )
 
 func main() {
@@ -461,9 +953,9 @@ func main() {
 
 </details>
 
-### coloring/fade-multiple-colors
+### coloring/fade-colors-rgb-style
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/fade-multiple-colors/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/fade-colors-rgb-style/animation.svg)
 
 <details>
 
@@ -475,7 +967,88 @@ package main
 import (
 	"strings"
 
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
+)
+
+func main() {
+	white := pterm.NewRGB(255, 255, 255) // This RGB value is used as the gradients start point.
+	grey := pterm.NewRGB(128, 128, 128)  // This RGB value is used as the gradients start point.
+	black := pterm.NewRGB(0, 0, 0)       // This RGB value is used as the gradients start point.
+	red := pterm.NewRGB(255, 0, 0)       // This RGB value is used as the gradients start point.
+	purple := pterm.NewRGB(255, 0, 255)  // This RGB value is used as the gradients start point.
+	green := pterm.NewRGB(0, 255, 0)     // This RGB value is used as the gradients start point.
+
+	str := "RGB colors only work in Terminals which support TrueColor."
+	strs := strings.Split(str, "")
+	var fadeInfo string // String which will be used to print.
+	for i := 0; i < len(str); i++ {
+		// Append faded letter to info string.
+		fadeInfo += pterm.NewRGBStyle(white.Fade(0, float32(len(str)), float32(i), purple), grey.Fade(0, float32(len(str)), float32(i), black)).Sprint(strs[i])
+	}
+
+	pterm.Info.Println(fadeInfo)
+
+	str = "The background and foreground colors can be customized individually."
+	strs = strings.Split(str, "")
+	var fade2 string // String which will be used to print info.
+	for i := 0; i < len(str); i++ {
+		// Append faded letter to info string.
+		fade2 += pterm.NewRGBStyle(black, purple.Fade(0, float32(len(str)), float32(i), red)).Sprint(strs[i])
+	}
+
+	pterm.Println(fade2)
+
+	str = "Styles can also be applied. For example: Bold or Italic."
+	strs = strings.Split(str, "")
+	var fade3 string // String which will be used to print.
+
+	bold := 0
+	boldStr := strings.Split("Bold", "")
+	italic := 0
+	italicStr := strings.Split("Italic", "")
+
+	for i := 0; i < len(str); i++ {
+		// Append faded letter to info string.
+		s := pterm.NewRGBStyle(white.Fade(0, float32(len(str)), float32(i), green), red.Fade(0, float32(len(str)), float32(i), black))
+
+		// if the next letters are "Bold", then add the style "Bold".
+		// else if the next letters are "Italic", then add the style "Italic".
+		if bold < len(boldStr) && i+len(boldStr) <= len(strs) {
+			if strings.Join(strs[i:i+len(boldStr)-bold], "") == strings.Join(boldStr[bold:], "") {
+				s = s.AddOptions(pterm.Bold)
+				bold++
+			}
+		} else if italic < len(italicStr) && i+len(italicStr)-italic < len(strs) {
+			if strings.Join(strs[i:i+len(italicStr)-italic], "") == strings.Join(italicStr[italic:], "") {
+				s = s.AddOptions(pterm.Italic)
+				italic++
+			}
+		}
+		fade3 += s.Sprint(strs[i])
+	}
+
+	pterm.Println(fade3)
+}
+
+```
+
+</details>
+
+### coloring/fade-multiple-colors
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/fade-multiple-colors/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"strings"
+
+	"github.com/pterm/pterm"
 )
 
 func main() {
@@ -510,7 +1083,7 @@ func main() {
 
 ### coloring/override-default-printers
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/override-default-printers/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/override-default-printers/animation.svg)
 
 <details>
 
@@ -519,7 +1092,7 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
 
 func main() {
 	// Print default error.
@@ -541,7 +1114,7 @@ func main() {
 
 ### coloring/print-color-rgb
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/coloring/print-color-rgb/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/print-color-rgb/animation.svg)
 
 <details>
 
@@ -550,14 +1123,47 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
 
 func main() {
 	// Print strings with a custom RGB color.
 	// NOTICE: This only works with terminals which support TrueColor.
 	pterm.NewRGB(178, 44, 199).Println("This text is printed with a custom RGB!")
 	pterm.NewRGB(15, 199, 209).Println("This text is printed with a custom RGB!")
-	pterm.NewRGB(201, 144, 30).Println("This text is printed with a custom RGB!")
+	pterm.NewRGB(201, 144, 30, true).Println("This text is printed with a custom RGB background!")
+}
+
+```
+
+</details>
+
+### coloring/print-color-rgb-style
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/coloring/print-color-rgb-style/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"github.com/pterm/pterm"
+)
+
+func main() {
+	foregroundRGB := pterm.RGB{R: 187, G: 80, B: 0}
+	backgroundRGB := pterm.RGB{R: 0, G: 50, B: 123}
+
+	// Print string with a custom foreground and background RGB color.
+	pterm.NewRGBStyle(foregroundRGB, backgroundRGB).Println("This text is not styled.")
+
+	// Print string with a custom foreground and background RGB color and style bold.
+	pterm.NewRGBStyle(foregroundRGB, backgroundRGB).AddOptions(pterm.Bold).Println("This text is bold.")
+
+	// Print string with a custom foreground and background RGB color and style italic.
+	pterm.NewRGBStyle(foregroundRGB, backgroundRGB).AddOptions(pterm.Italic).Println("This text is italic.")
 }
 
 ```
@@ -566,7 +1172,7 @@ func main() {
 
 ### demo/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/demo/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/demo/demo/animation.svg)
 
 <details>
 
@@ -583,14 +1189,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/x0f5c3/pterm"
-	"github.com/x0f5c3/pterm/putils"
+	"github.com/pterm/pterm"
+	"github.com/pterm/pterm/putils"
 )
 
 // Speed the demo up, by setting this flag.
 // Usefull for debugging.
 // Example:
-//   go run main.go -speedup
+//
+//	go run main.go -speedup
 var speedup = flag.Bool("speedup", false, "Speed up the demo")
 var skipIntro = flag.Bool("skip-intro", false, "Skips the intro")
 var second = time.Second
@@ -606,6 +1213,31 @@ func main() {
 		introScreen()
 		clear()
 	}
+
+	showcase("Structured Logging", 5, func() {
+		logger := pterm.DefaultLogger.
+			WithLevel(pterm.LogLevelTrace)
+
+		logger.Trace("Doing not so important stuff", logger.Args("priority", "super low"))
+
+		time.Sleep(time.Second * 3)
+
+		interstingStuff := map[string]any{
+			"when were crayons invented":  "1903",
+			"what is the meaning of life": 42,
+			"is this interesting":         true,
+		}
+		logger.Debug("This might be interesting", logger.ArgsFromMap(interstingStuff))
+		time.Sleep(time.Second * 3)
+
+		logger.Info("That was actually interesting", logger.Args("such", "wow"))
+		time.Sleep(time.Second * 3)
+		logger.Warn("Oh no, I see an error coming to us!", logger.Args("speed", 88, "measures", "mph"))
+		time.Sleep(time.Second * 3)
+		logger.Error("Damn, here it is!", logger.Args("error", "something went wrong"))
+		time.Sleep(time.Second * 3)
+		logger.Info("But what's really cool is, that you can print very long logs, and PTerm will automatically wrap them for you! Say goodbye to text, that has weird line breaks!", logger.Args("very", "long"))
+	})
 
 	showcase("Progress bar", 2, func() {
 		pb, _ := pterm.DefaultProgressbar.WithTotal(len(pseudoProgramList)).WithTitle("Installing stuff").Start()
@@ -665,28 +1297,6 @@ func main() {
 		pterm.DefaultCenter.Println(boxedTable)
 	})
 
-	showcase("Default Prefix Printers", 5, func() {
-		// Enable debug messages.
-		pterm.EnableDebugMessages() // Temporarily set debug output to true, to display the debug printer.
-
-		pterm.Debug.Println("Hello, World!") // Print Debug.
-		time.Sleep(second / 2)
-		pterm.Info.Println("Hello, World!") // Print Info.
-		time.Sleep(second / 2)
-		pterm.Success.Println("Hello, World!") // Print Success.
-		time.Sleep(second / 2)
-		pterm.Warning.Println("Hello, World!") // Print Warning.
-		time.Sleep(second / 2)
-		pterm.Error.Println("Errors show the filename and linenumber inside the terminal!") // Print Error.
-		time.Sleep(second / 2)
-		pterm.Info.WithShowLineNumber().Println("Other PrefixPrinters can do that too!") // Print Error.
-		time.Sleep(second / 2)
-		// Temporarily set Fatal to false, so that the CI won't panic.
-		pterm.Fatal.WithFatal(false).Println("Hello, World!") // Print Fatal.
-
-		pterm.DisableDebugMessages() // Disable debug output again.
-	})
-
 	showcase("TrueColor Support", 7, func() {
 		from := pterm.NewRGB(0, 255, 255) // This RGB value is used as the gradients start point.
 		to := pterm.NewRGB(255, 0, 255)   // This RGB value is used as the gradients first point.
@@ -700,24 +1310,6 @@ func main() {
 			fadeInfo += from.Fade(0, float32(len(str)), float32(i), to).Sprint(strs[i])
 		}
 		pterm.DefaultCenter.WithCenterEachLineSeparately().Println(fadeInfo)
-	})
-
-	showcase("Themes", 2, func() {
-		pterm.Info.Println("You can change the color theme of PTerm easily to fit your needs!\nThis is the default one:")
-		time.Sleep(second / 2)
-		// Print every value of the default theme with its own style.
-		v := reflect.ValueOf(pterm.ThemeDefault)
-		typeOfS := v.Type()
-
-		if typeOfS == reflect.TypeOf(pterm.Theme{}) {
-			for i := 0; i < v.NumField(); i++ {
-				field, ok := v.Field(i).Interface().(pterm.Style)
-				if ok {
-					field.Println(typeOfS.Field(i).Name)
-				}
-				time.Sleep(time.Millisecond * 250)
-			}
-		}
 	})
 
 	showcase("Fully Customizale", 2, func() {
@@ -766,6 +1358,24 @@ func main() {
 			WithTopRightCornerString("╚").
 			Sprintln(text))
 		area.Stop()
+	})
+
+	showcase("Themes", 2, func() {
+		pterm.Info.Println("You can change the color theme of PTerm easily to fit your needs!\nThis is the default one:")
+		time.Sleep(second / 2)
+		// Print every value of the default theme with its own style.
+		v := reflect.ValueOf(pterm.ThemeDefault)
+		typeOfS := v.Type()
+
+		if typeOfS == reflect.TypeOf(pterm.Theme{}) {
+			for i := 0; i < v.NumField(); i++ {
+				field, ok := v.Field(i).Interface().(pterm.Style)
+				if ok {
+					field.Println(typeOfS.Field(i).Name)
+				}
+				time.Sleep(time.Millisecond * 250)
+			}
+		}
 	})
 
 	showcase("And much more!", 3, func() {
@@ -842,33 +1452,9 @@ func randomInt(min, max int) int {
 
 </details>
 
-### header/demo
+### header/custom
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/header/demo/animation.svg)
-
-<details>
-
-<summary>SHOW SOURCE</summary>
-
-```go
-package main
-
-import "github.com/x0f5c3/pterm"
-
-func main() {
-	// Print a default header.
-	pterm.DefaultHeader.Println("This is the default header!")
-	pterm.Println() // spacer
-	pterm.DefaultHeader.WithFullWidth().Println("This is a full-width header.")
-}
-
-```
-
-</details>
-
-### header-custom/demo
-
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/header-custom/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/header/custom/animation.svg)
 
 <details>
 
@@ -877,10 +1463,10 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
 
 func main() {
-	// All available options: https://pkg.go.dev/github.com/x0f5c3/pterm#HeaderPrinter
+	// All available options: https://pkg.go.dev/github.com/pterm/pterm#HeaderPrinter
 
 	// Build on top of DefaultHeader
 	pterm.DefaultHeader. // Use DefaultHeader as base
@@ -906,9 +1492,33 @@ func main() {
 
 </details>
 
+### header/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/header/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	// Print a default header.
+	pterm.DefaultHeader.Println("This is the default header!")
+	pterm.Println() // spacer
+	pterm.DefaultHeader.WithFullWidth().Println("This is a full-width header.")
+}
+
+```
+
+</details>
+
 ### interactive_confirm/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_confirm/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_confirm/demo/animation.svg)
 
 <details>
 
@@ -918,7 +1528,7 @@ func main() {
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
 )
 
 func main() {
@@ -938,9 +1548,34 @@ func boolToText(b bool) string {
 
 </details>
 
-### interactive_multiselect/demo
+### interactive_continue/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_multiselect/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_continue/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"github.com/pterm/pterm"
+)
+
+func main() {
+	result, _ := pterm.DefaultInteractiveContinue.Show()
+	pterm.Println() // Blank line
+	pterm.Info.Printfln("You answered: %s", result)
+}
+
+```
+
+</details>
+
+### interactive_multiselect/custom-checkmarks
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_multiselect/custom-checkmarks/animation.svg)
 
 <details>
 
@@ -952,7 +1587,83 @@ package main
 import (
 	"fmt"
 
-	"github.com/x0f5c3/pterm"
+	"atomicgo.dev/keyboard/keys"
+
+	"github.com/pterm/pterm"
+)
+
+func main() {
+	var options []string
+
+	for i := 0; i < 5; i++ {
+		options = append(options, fmt.Sprintf("Option %d", i))
+	}
+
+	printer := pterm.DefaultInteractiveMultiselect.WithOptions(options)
+	printer.Filter = false
+	printer.KeyConfirm = keys.Enter
+	printer.KeySelect = keys.Space
+	printer.Checkmark = &pterm.Checkmark{Checked: pterm.Green("+"), Unchecked: pterm.Red("-")}
+	selectedOptions, _ := printer.Show()
+	pterm.Info.Printfln("Selected options: %s", pterm.Green(selectedOptions))
+}
+
+```
+
+</details>
+
+### interactive_multiselect/custom-keys
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_multiselect/custom-keys/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"fmt"
+
+	"atomicgo.dev/keyboard/keys"
+	"github.com/pterm/pterm"
+)
+
+func main() {
+	var options []string
+
+	for i := 0; i < 5; i++ {
+		options = append(options, fmt.Sprintf("Option %d", i))
+	}
+
+	printer := pterm.DefaultInteractiveMultiselect.WithOptions(options)
+	printer.Filter = false
+	printer.KeyConfirm = keys.Enter
+	printer.KeySelect = keys.Space
+	selectedOptions, _ := printer.Show()
+	pterm.Info.Printfln("Selected options: %s", pterm.Green(selectedOptions))
+}
+
+```
+
+</details>
+
+### interactive_multiselect/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_multiselect/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/pterm/pterm"
 )
 
 func main() {
@@ -976,7 +1687,7 @@ func main() {
 
 ### interactive_select/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_select/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_select/demo/animation.svg)
 
 <details>
 
@@ -988,7 +1699,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
 )
 
 func main() {
@@ -1012,7 +1723,7 @@ func main() {
 
 ### interactive_textinput/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_textinput/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_textinput/demo/animation.svg)
 
 <details>
 
@@ -1022,7 +1733,7 @@ func main() {
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
 )
 
 func main() {
@@ -1037,7 +1748,7 @@ func main() {
 
 ### interactive_textinput/multi-line
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/interactive_textinput/multi-line/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_textinput/multi-line/animation.svg)
 
 <details>
 
@@ -1047,7 +1758,7 @@ func main() {
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
 )
 
 func main() {
@@ -1060,9 +1771,9 @@ func main() {
 
 </details>
 
-### panel/demo
+### interactive_textinput/password
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/panel/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/interactive_textinput/password/animation.svg)
 
 <details>
 
@@ -1071,7 +1782,303 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
+
+func main() {
+	result, _ := pterm.DefaultInteractiveTextInput.WithMask("*").Show("Enter your password")
+
+	logger := pterm.DefaultLogger
+	logger.Info("Password received", logger.Args("password", result))
+}
+
+```
+
+</details>
+
+### logger/custom-key-styles
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/logger/custom-key-styles/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	logger := pterm.DefaultLogger.WithLevel(pterm.LogLevelTrace) // Only show logs with a level of Trace or higher.
+
+	// Overwrite all key styles with a new map
+	logger = logger.WithKeyStyles(map[string]pterm.Style{
+		"priority": *pterm.NewStyle(pterm.FgRed),
+	})
+
+	// The priority key should now be red
+	logger.Info("The priority key should now be red", logger.Args("priority", "low", "foo", "bar"))
+
+	// Append a key style to the exisiting ones
+	logger.AppendKeyStyle("foo", *pterm.NewStyle(pterm.FgBlue))
+
+	// The foo key should now be blue
+	logger.Info("The foo key should now be blue", logger.Args("priority", "low", "foo", "bar"))
+}
+
+```
+
+</details>
+
+### logger/default
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/logger/default/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"github.com/pterm/pterm"
+	"time"
+)
+
+func main() {
+	logger := pterm.DefaultLogger.WithLevel(pterm.LogLevelTrace) // Only show logs with a level of Trace or higher.
+
+	logger.Trace("Doing not so important stuff", logger.Args("priority", "super low"))
+
+	// You can also use the `ArgsFromMap` function to create a `Args` object from a map.
+	interstingStuff := map[string]any{
+		"when were crayons invented":  "1903",
+		"what is the meaning of life": 42,
+		"is this interesting":         true,
+	}
+	logger.Debug("This might be interesting", logger.ArgsFromMap(interstingStuff))
+
+	logger.Info("That was actually interesting", logger.Args("such", "wow"))
+	logger.Warn("Oh no, I see an error coming to us!", logger.Args("speed", 88, "measures", "mph"))
+	logger.Error("Damn, here it is!", logger.Args("error", "something went wrong"))
+	logger.Info("But what's really cool is, that you can print very long logs, and PTerm will automatically wrap them for you! Say goodbye to text, that has weird line breaks!", logger.Args("very", "long"))
+	time.Sleep(time.Second * 2)
+	logger.Fatal("Oh no, this process is getting killed!", logger.Args("fatal", true))
+}
+
+```
+
+</details>
+
+### logger/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/logger/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"github.com/pterm/pterm"
+	"time"
+)
+
+func main() {
+	logger := pterm.DefaultLogger.
+		WithLevel(pterm.LogLevelTrace)
+
+	logger.Trace("Doing not so important stuff", logger.Args("priority", "super low"))
+
+	sleep()
+
+	interstingStuff := map[string]any{
+		"when were crayons invented":  "1903",
+		"what is the meaning of life": 42,
+		"is this interesting":         true,
+	}
+	logger.Debug("This might be interesting", logger.ArgsFromMap(interstingStuff))
+	sleep()
+
+	logger.Info("That was actually interesting", logger.Args("such", "wow"))
+	sleep()
+	logger.Warn("Oh no, I see an error coming to us!", logger.Args("speed", 88, "measures", "mph"))
+	sleep()
+	logger.Error("Damn, here it is!", logger.Args("error", "something went wrong"))
+	sleep()
+	logger.Info("But what's really cool is, that you can print very long logs, and PTerm will automatically wrap them for you! Say goodbye to text, that has weird line breaks!", logger.Args("very", "long"))
+	sleep()
+	logger.Fatal("Oh no, this process is getting killed!", logger.Args("fatal", true))
+}
+
+func sleep() {
+	time.Sleep(time.Second * 3)
+}
+
+```
+
+</details>
+
+### logger/json
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/logger/json/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	logger := pterm.DefaultLogger.
+		WithLevel(pterm.LogLevelTrace).       // Only show logs with a level of Trace or higher.
+		WithFormatter(pterm.LogFormatterJSON) // ! Make the logger print JSON logs.
+
+	logger.Trace("Doing not so important stuff", logger.Args("priority", "super low"))
+
+	// You can also use the `ArgsFromMap` function to create a `Args` object from a map.
+	interstingStuff := map[string]any{
+		"when were crayons invented":  "1903",
+		"what is the meaning of life": 42,
+		"is this interesting":         true,
+	}
+	logger.Debug("This might be interesting", logger.ArgsFromMap(interstingStuff))
+
+	logger.Info("That was actually interesting", logger.Args("such", "wow"))
+	logger.Warn("Oh no, I see an error coming to us!", logger.Args("speed", 88, "measures", "mph"))
+	logger.Error("Damn, here it is!", logger.Args("error", "something went wrong"))
+	logger.Info("But what's really cool is, that you can print very long logs, and PTerm will automatically wrap them for you! Say goodbye to text, that has weird line breaks!", logger.Args("very", "long"))
+	logger.Fatal("Oh no, this process is getting killed!", logger.Args("fatal", true))
+}
+
+```
+
+</details>
+
+### logger/with-caller
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/logger/with-caller/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	logger := pterm.DefaultLogger.
+		WithLevel(pterm.LogLevelTrace). // Only show logs with a level of Trace or higher.
+		WithCaller()                    // ! Show the caller of the log function.
+
+	logger.Trace("Doing not so important stuff", logger.Args("priority", "super low"))
+
+	// You can also use the `ArgsFromMap` function to create a `Args` object from a map.
+	interstingStuff := map[string]any{
+		"when were crayons invented":  "1903",
+		"what is the meaning of life": 42,
+		"is this interesting":         true,
+	}
+	logger.Debug("This might be interesting", logger.ArgsFromMap(interstingStuff))
+
+	logger.Info("That was actually interesting", logger.Args("such", "wow"))
+	logger.Warn("Oh no, I see an error coming to us!", logger.Args("speed", 88, "measures", "mph"))
+	logger.Error("Damn, here it is!", logger.Args("error", "something went wrong"))
+	logger.Info("But what's really cool is, that you can print very long logs, and PTerm will automatically wrap them for you! Say goodbye to text, that has weird line breaks!", logger.Args("very", "long"))
+	logger.Fatal("Oh no, this process is getting killed!", logger.Args("fatal", true))
+}
+
+```
+
+</details>
+
+### multiple-live-printers/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/multiple-live-printers/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"github.com/pterm/pterm"
+	"time"
+)
+
+func main() {
+	multi := pterm.DefaultMultiPrinter
+
+	spinner1, _ := pterm.DefaultSpinner.WithWriter(multi.NewWriter()).Start("Spinner 1")
+	spinner2, _ := pterm.DefaultSpinner.WithWriter(multi.NewWriter()).Start("Spinner 2")
+	pb1, _ := pterm.DefaultProgressbar.WithTotal(100).WithWriter(multi.NewWriter()).Start("Progressbar 1")
+	pb2, _ := pterm.DefaultProgressbar.WithTotal(100).WithWriter(multi.NewWriter()).Start("Progressbar 2")
+	pb3, _ := pterm.DefaultProgressbar.WithTotal(100).WithWriter(multi.NewWriter()).Start("Progressbar 3")
+	pb4, _ := pterm.DefaultProgressbar.WithTotal(100).WithWriter(multi.NewWriter()).Start("Progressbar 4")
+	pb5, _ := pterm.DefaultProgressbar.WithTotal(100).WithWriter(multi.NewWriter()).Start("Progressbar 5")
+
+	multi.Start()
+
+	// Randomly increment progress bars for demo purposes.
+	for i := 1; i <= 100; i++ {
+		pb1.Increment()
+
+		if i%2 == 0 {
+			pb2.Add(3)
+		}
+
+		if i%5 == 0 {
+			pb3.Increment()
+		}
+
+		if i%10 == 0 {
+			pb4.Increment()
+		}
+
+		if i%3 == 0 {
+			pb5.Increment()
+		}
+
+		if i%50 == 0 {
+			spinner1.Success("Spinner 1 is done!")
+		}
+
+		if i%60 == 0 {
+			spinner2.Fail("Spinner 2 failed!")
+		}
+
+		time.Sleep(time.Millisecond * 50)
+	}
+
+	multi.Stop()
+}
+
+```
+
+</details>
+
+### panel/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/panel/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
 
 func main() {
 	// Declare panels in a two dimensional grid system.
@@ -1090,7 +2097,7 @@ func main() {
 
 ### paragraph/customized
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/paragraph/customized/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/paragraph/customized/animation.svg)
 
 <details>
 
@@ -1099,7 +2106,7 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
 
 func main() {
 	// Print a paragraph with a custom maximal width.
@@ -1121,7 +2128,7 @@ func main() {
 
 ### paragraph/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/paragraph/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/paragraph/demo/animation.svg)
 
 <details>
 
@@ -1130,7 +2137,7 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
 
 func main() {
 	// Print long text with default paragraph printer.
@@ -1152,7 +2159,7 @@ func main() {
 
 ### prefix/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/prefix/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/prefix/demo/animation.svg)
 
 <details>
 
@@ -1161,7 +2168,7 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
 
 func main() {
 	// Enable debug messages.
@@ -1183,7 +2190,7 @@ func main() {
 
 ### progressbar/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/progressbar/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/progressbar/demo/animation.svg)
 
 <details>
 
@@ -1196,7 +2203,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
 )
 
 // Slice of strings with placeholder text.
@@ -1208,6 +2215,9 @@ func main() {
 	p, _ := pterm.DefaultProgressbar.WithTotal(len(fakeInstallList)).WithTitle("Downloading stuff").Start()
 
 	for i := 0; i < p.Total; i++ {
+		if i == 6 {
+			time.Sleep(time.Second * 3) // Simulate a slow download.
+		}
 		p.UpdateTitle("Downloading " + fakeInstallList[i])         // Update the title of the progressbar.
 		pterm.Success.Println("Downloading " + fakeInstallList[i]) // If a progressbar is running, each print will be printed above the progressbar.
 		p.Increment()                                              // Increment the progressbar by one. Use Add(x int) to increment by a custom amount.
@@ -1219,9 +2229,9 @@ func main() {
 
 </details>
 
-### section/demo
+### progressbar/multiple
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/section/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/progressbar/multiple/animation.svg)
 
 <details>
 
@@ -1230,7 +2240,64 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import (
+	"github.com/pterm/pterm"
+	"time"
+)
+
+func main() {
+	multi := pterm.DefaultMultiPrinter
+
+	pb1, _ := pterm.DefaultProgressbar.WithTotal(100).WithWriter(multi.NewWriter()).Start("Progressbar 1")
+	pb2, _ := pterm.DefaultProgressbar.WithTotal(100).WithWriter(multi.NewWriter()).Start("Progressbar 2")
+	pb3, _ := pterm.DefaultProgressbar.WithTotal(100).WithWriter(multi.NewWriter()).Start("Progressbar 3")
+	pb4, _ := pterm.DefaultProgressbar.WithTotal(100).WithWriter(multi.NewWriter()).Start("Progressbar 4")
+	pb5, _ := pterm.DefaultProgressbar.WithTotal(100).WithWriter(multi.NewWriter()).Start("Progressbar 5")
+
+	multi.Start()
+
+	// Randomly increment progress bars for demo purposes.
+	for i := 1; i <= 100; i++ {
+		pb1.Increment()
+
+		if i%2 == 0 {
+			pb2.Add(3)
+		}
+
+		if i%5 == 0 {
+			pb3.Increment()
+		}
+
+		if i%10 == 0 {
+			pb4.Increment()
+		}
+
+		if i%3 == 0 {
+			pb5.Increment()
+		}
+
+		time.Sleep(time.Millisecond * 50)
+	}
+
+	multi.Stop()
+}
+
+```
+
+</details>
+
+### section/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/section/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
 
 func main() {
 	// Print a section with level one.
@@ -1250,7 +2317,7 @@ func main() {
 
 ### spinner/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/spinner/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/spinner/demo/animation.svg)
 
 <details>
 
@@ -1262,10 +2329,15 @@ package main
 import (
 	"time"
 
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
 )
 
 func main() {
+	// Create and start a fork of the default spinner.
+	spinnerInfo, _ := pterm.DefaultSpinner.Start("Some informational action...")
+	time.Sleep(time.Second * 2) // Simulate 3 seconds of processing something.
+	spinnerInfo.Info()          // Resolve spinner with error message.
+
 	// Create and start a fork of the default spinner.
 	spinnerSuccess, _ := pterm.DefaultSpinner.Start("Doing something important... (will succeed)")
 	time.Sleep(time.Second * 2) // Simulate 3 seconds of processing something.
@@ -1282,6 +2354,19 @@ func main() {
 	spinnerFail.Fail()          // Resolve spinner with error message.
 
 	// Create and start a fork of the default spinner.
+	spinnerNochange, _ := pterm.DefaultSpinner.Start("Checking something important... (will result in no change)")
+	// Replace the InfoPrinter with a custom "NOCHG" one
+	spinnerNochange.InfoPrinter = &pterm.PrefixPrinter{
+		MessageStyle: &pterm.Style{pterm.FgLightBlue},
+		Prefix: pterm.Prefix{
+			Style: &pterm.Style{pterm.FgBlack, pterm.BgLightBlue},
+			Text:  " NOCHG ",
+		},
+	}
+	time.Sleep(time.Second * 2)                     // Simulate 3 seconds of processing something.
+	spinnerNochange.Info("No change were required") // Resolve spinner with error message.
+
+	// Create and start a fork of the default spinner.
 	spinnerLiveText, _ := pterm.DefaultSpinner.Start("Doing a lot of stuff...")
 	time.Sleep(time.Second)                          // Simulate 2 seconds of processing something.
 	spinnerLiveText.UpdateText("It's really much")   // Update spinner text.
@@ -1295,9 +2380,9 @@ func main() {
 
 </details>
 
-### style/demo
+### spinner/multiple
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/style/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/spinner/multiple/animation.svg)
 
 <details>
 
@@ -1306,7 +2391,46 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import (
+	"github.com/pterm/pterm"
+	"time"
+)
+
+func main() {
+	multi := pterm.DefaultMultiPrinter
+
+	spinner1, _ := pterm.DefaultSpinner.WithWriter(multi.NewWriter()).Start("Spinner 1")
+	spinner2, _ := pterm.DefaultSpinner.WithWriter(multi.NewWriter()).Start("Spinner 2")
+	spinner3, _ := pterm.DefaultSpinner.WithWriter(multi.NewWriter()).Start("Spinner 3")
+
+	multi.Start()
+
+	time.Sleep(time.Millisecond * 1000)
+	spinner1.Success("Spinner 1 is done!")
+	time.Sleep(time.Millisecond * 750)
+	spinner2.Fail("Spinner 2 failed!")
+	time.Sleep(time.Millisecond * 500)
+	spinner3.Warning("Spinner 3 has a warning!")
+
+	multi.Stop()
+}
+
+```
+
+</details>
+
+### style/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/style/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
 
 func main() {
 	// Create styles as new variables
@@ -1322,9 +2446,9 @@ func main() {
 
 </details>
 
-### table/demo
+### table/boxed
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/table/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/table/boxed/animation.svg)
 
 <details>
 
@@ -1333,27 +2457,115 @@ func main() {
 ```go
 package main
 
-import "github.com/x0f5c3/pterm"
+import "github.com/pterm/pterm"
+
+func main() {
+	// Create a fork of the default table, fill it with data and print it.
+	// Data can also be generated and inserted later.
+	pterm.DefaultTable.WithHasHeader().WithBoxed().WithData(pterm.TableData{
+		{"Firstname", "Lastname", "Email", "Note"},
+		{"Paul", "Dean", "augue@velitAliquam.co.uk", ""},
+		{"Callie", "Mckay", "nunc.sed@est.com", "这是一个测试, haha!"},
+		{"Libby", "Camacho", "lobortis@semper.com", "just a test, hey!"},
+		{"张", "小宝", "zhang@example.com", ""},
+	}).Render()
+}
+
+```
+
+</details>
+
+### table/demo
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/table/demo/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
 
 func main() {
 	// Create a fork of the default table, fill it with data and print it.
 	// Data can also be generated and inserted later.
 	pterm.DefaultTable.WithHasHeader().WithData(pterm.TableData{
-		{"Firstname", "Lastname", "Email"},
-		{"Paul", "Dean", "nisi.dictum.augue@velitAliquam.co.uk"},
-		{"Callie", "Mckay", "egestas.nunc.sed@est.com"},
-		{"Libby", "Camacho", "aliquet.lobortis@semper.com"},
+		{"Firstname", "Lastname", "Email", "Note"},
+		{"Paul", "Dean", "augue@velitAliquam.co.uk", ""},
+		{"Callie", "Mckay", "nunc.sed@est.com", "这是一个测试, haha!"},
+		{"Libby", "Camacho", "lobortis@semper.com", "just a test, hey!"},
+		{"张", "小宝", "zhang@example.com", ""},
 	}).Render()
 
 	pterm.Println() // Blank line
 
-	// Create a table with right alignment.
+	// Create a table with multiple lines in a row.
 	pterm.DefaultTable.WithHasHeader().WithData(pterm.TableData{
 		{"Firstname", "Lastname", "Email"},
-		{"Paul", "Dean", "nisi.dictum.augue@velitAliquam.co.uk"},
-		{"Callie", "Mckay", "egestas.nunc.sed@est.com"},
-		{"Libby", "Camacho", "aliquet.lobortis@semper.com"},
-	}).WithRightAlignment().Render()
+		{"Paul\n\nNewline", "Dean", "augue@velitAliquam.co.uk"},
+		{"Callie", "Mckay", "nunc.sed@est.com\nNewline"},
+		{"Libby", "Camacho", "lobortis@semper.com"},
+		{"张", "小宝", "zhang@example.com"},
+	}).Render()
+}
+
+```
+
+</details>
+
+### table/multiple-lines
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/table/multiple-lines/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	// Create a table with multiple lines in a row and set a row separator.
+	pterm.DefaultTable.WithHasHeader().WithRowSeparator("-").WithHeaderRowSeparator("-").WithData(pterm.TableData{
+		{"Firstname", "Lastname", "Email"},
+		{"Paul\n\nNewline", "Dean", "augue@velitAliquam.co.uk"},
+		{"Callie", "Mckay", "nunc.sed@est.com\nNewline"},
+		{"Libby", "Camacho", "lobortis@semper.com"},
+		{"张", "小宝", "zhang@example.com"},
+	}).Render()
+}
+
+```
+
+</details>
+
+### table/right-alignment
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/table/right-alignment/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import "github.com/pterm/pterm"
+
+func main() {
+	// Create a fork of the default table, fill it with data and print it.
+	// Data can also be generated and inserted later.
+	pterm.DefaultTable.WithHasHeader().WithRightAlignment().WithData(pterm.TableData{
+		{"Firstname", "Lastname", "Email", "Note"},
+		{"Paul", "Dean", "augue@velitAliquam.co.uk", ""},
+		{"Callie", "Mckay", "nunc.sed@est.com", "这是一个测试, haha!"},
+		{"Libby", "Camacho", "lobortis@semper.com", "just a test, hey!"},
+		{"张", "小宝", "zhang@example.com", ""},
+	}).Render()
 }
 
 ```
@@ -1362,7 +2574,7 @@ func main() {
 
 ### theme/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/theme/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/theme/demo/animation.svg)
 
 <details>
 
@@ -1372,7 +2584,7 @@ func main() {
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
+	"github.com/pterm/pterm"
 	"reflect"
 	"time"
 )
@@ -1406,7 +2618,7 @@ func main() {
 
 ### tree/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/tree/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/tree/demo/animation.svg)
 
 <details>
 
@@ -1416,8 +2628,43 @@ func main() {
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
-	"github.com/x0f5c3/pterm/putils"
+	"github.com/pterm/pterm"
+)
+
+func main() {
+	tree := pterm.TreeNode{
+		Text: "Top node",
+		Children: []pterm.TreeNode{{
+			Text: "Child node",
+			Children: []pterm.TreeNode{
+				{Text: "Grandchild node"},
+				{Text: "Grandchild node"},
+				{Text: "Grandchild node"},
+			},
+		}},
+	}
+
+	pterm.DefaultTree.WithRoot(tree).Render()
+}
+
+```
+
+</details>
+
+### tree/from-leveled-list
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/tree/from-leveled-list/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"github.com/pterm/pterm"
+	"github.com/pterm/pterm/putils"
 )
 
 func main() {
@@ -1449,6 +2696,7 @@ func main() {
 
 	// Generate tree from LeveledList.
 	root := putils.TreeFromLeveledList(leveledList)
+	root.Text = "Computer"
 
 	// Render TreePrinter
 	pterm.DefaultTree.WithRoot(root).Render()

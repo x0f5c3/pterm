@@ -1,18 +1,18 @@
+name: Code Analysis
 
-
-name: golangci-lint
 on: [ push, pull_request ]
+
 jobs:
-  golangci:
-    name: lint
+  lint:
+    if: "!contains(github.event.head_commit.message, 'autoupdate')"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v4
         with:
-          go-version: 1.18
+          go-version: 'stable'
 
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v3

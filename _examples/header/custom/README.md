@@ -1,10 +1,6 @@
-### header-custom/demo
+# header/custom
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/header-custom/demo/animation.svg)
-
-<details>
-
-<summary>SHOW SOURCE</summary>
+![Animation](animation.svg)
 
 ```go
 package main
@@ -35,6 +31,3 @@ func main() {
 }
 
 ```
-
-</details>
-

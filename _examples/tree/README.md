@@ -1,6 +1,6 @@
 ### tree/demo
 
-![Animation](https://raw.githubusercontent.com/x0f5c3/pterm/master/_examples/tree/demo/animation.svg)
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/tree/demo/animation.svg)
 
 <details>
 
@@ -10,8 +10,43 @@
 package main
 
 import (
-	"github.com/x0f5c3/pterm"
-	"github.com/x0f5c3/pterm/putils"
+	"github.com/pterm/pterm"
+)
+
+func main() {
+	tree := pterm.TreeNode{
+		Text: "Top node",
+		Children: []pterm.TreeNode{{
+			Text: "Child node",
+			Children: []pterm.TreeNode{
+				{Text: "Grandchild node"},
+				{Text: "Grandchild node"},
+				{Text: "Grandchild node"},
+			},
+		}},
+	}
+
+	pterm.DefaultTree.WithRoot(tree).Render()
+}
+
+```
+
+</details>
+
+### tree/from-leveled-list
+
+![Animation](https://raw.githubusercontent.com/pterm/pterm/master/_examples/tree/from-leveled-list/animation.svg)
+
+<details>
+
+<summary>SHOW SOURCE</summary>
+
+```go
+package main
+
+import (
+	"github.com/pterm/pterm"
+	"github.com/pterm/pterm/putils"
 )
 
 func main() {
@@ -43,6 +78,7 @@ func main() {
 
 	// Generate tree from LeveledList.
 	root := putils.TreeFromLeveledList(leveledList)
+	root.Text = "Computer"
 
 	// Render TreePrinter
 	pterm.DefaultTree.WithRoot(root).Render()
